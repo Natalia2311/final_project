@@ -1,0 +1,22 @@
+@import url(../../vendor//fonts/fonts.css);
+@import url(../../vendor/normalize.css);
+
+.page {
+  
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 768px) and (max-width: 830px) {
+  .page {
+   
+    max-width: 768px;
+    width: 100%;
+     
+  }
+
+
+
+}

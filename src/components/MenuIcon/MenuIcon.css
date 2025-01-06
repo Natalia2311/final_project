@@ -1,0 +1,9 @@
+@media screen and (min-width: 320px) and (max-width: 650px) {
+
+    .menu-icon {
+        position: absolute; /* Position it relative to the header */
+        top: 16px; 
+        right: 16px; 
+       
+      }  
+}

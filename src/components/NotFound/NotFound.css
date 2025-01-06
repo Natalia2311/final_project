@@ -1,0 +1,31 @@
+.notFound {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #F5F6F7;
+    max-height: 374px;
+    flex-direction: column;
+}
+
+.notFound__text {
+    font-family: "Roboto-slab";
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 30px;
+    color: #1A1B22;
+    text-align: center;
+    padding: 31.5px 0 16px 0;
+}
+
+.notMatched__text {
+    font-family: "Roboto";
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    color: #B6BCBF;
+    max-width: 240px;
+    width: 100%;
+}

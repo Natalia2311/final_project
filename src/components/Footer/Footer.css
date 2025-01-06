@@ -1,0 +1,87 @@
+.footer {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.footer__text {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  margin: 32px 0 26px 104px;
+  color: #b6bcbf;
+}
+
+.footer__links {
+  display: flex;
+}
+
+.footer__links_description {
+  list-style: none;
+  display: flex;
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  margin: 30px 40px 26px 0;
+}
+
+.footer__button-tripleten {
+  margin-left: 40px;
+  text-decoration: none;
+  color: black;
+}
+
+.footer__links_icons {
+  display: flex;
+  list-style: none;
+  margin: 28px 104px 28px 0;
+  padding: 0;
+}
+
+.footer__button-home {
+  padding: 0;
+  border-width: 0cap;
+  background: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.footer__button-github {
+  padding-right: 24px;
+  width: 24px;
+  height: 24px;
+}
+
+.footer__button-facebook {
+  width: 24px;
+  height: 24px;
+}
+
+@media screen and (max-width: 768px) and (max-width: 830px) {
+
+  .footer {
+
+    max-width: 100%; /* Prevent exceeding viewport width */
+    width: 100%;     /* Ensure the content fits the viewport */
+  }
+
+  .footer__text {
+   
+    margin: 24px 0 18px 40px;
+   
+  }
+
+  .footer__links_description {
+    margin: 21px 40px 19px 0;
+  }
+
+  .footer__links_icons {
+
+    margin: 20px 40px 20px 0;
+  }
+}

@@ -1,0 +1,26 @@
+.main {
+  max-width: 1440px;
+  flex-grow: 1;
+  margin: 0;
+}
+
+.card_section {
+  display: flex;
+  justify-content: center;
+
+  background: #F5F6F7;
+}
+
+@media screen and (max-width: 768px) and (max-width: 830px) {
+  .main {
+    max-width: 768px;
+    
+    
+  }
+
+  .card_section {
+    padding: 0 40px 0 40px;
+    
+  }
+
+}

@@ -1,0 +1,146 @@
+.searchForm {
+  height: 496px;
+  position: relative;
+}
+
+.searchForm__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.searchForm__title {
+  color: white;
+  font-family: "Roboto-slab";
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 64px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  max-width: 608px;
+  margin: 80px auto 32px;
+}
+
+.searchForm__description {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: white;
+  margin: 0;
+  padding: 0 0 88px;
+}
+
+.searchForm__searchbar {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 64px;
+}
+
+.searchForm__searchbar-input {
+  width: 608px;
+  height: 64px;
+  border-radius: 100px;
+  border: 1px;
+  border-color: #d1d2d6;
+  font-family: "Roboto";
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 400;
+  padding-left: 24px;
+}
+
+.searchForm__submit {
+  width: 168px;
+  height: 64px;
+  border-radius: 100px;
+  border: none;
+  background: #2f71e5;
+  color: #fff;
+  right: 0px;
+  cursor: pointer;
+  position: absolute;
+  padding: 0;
+  font-size: 18px;
+  font-family: "Roboto";
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.searchForm__submit:hover {
+  opacity: 60%;
+  transition: 0.25s ease-in-out;
+  color: white;
+  background: #347eff;
+}
+
+.searchForm__submit:active {
+  background: #2a65cc;
+}
+
+/* .searchForm__invalid {
+  position: absolute;
+  bottom: -20px; 
+  left: 0;
+  color: red;
+  font-size: 12px;
+} */
+
+@media screen and (max-width: 768px){
+  .searchForm {
+    height: 400px;
+  }
+
+  .searchForm__description {
+    max-width: 452px;
+    padding: 0 156px 48px 160px;
+  }
+
+  .searchForm__title {
+    max-width: 385px;
+    font-size: 36px;
+    line-height: 40px;
+    margin: 38px 220px 16px 160px;
+  }
+
+  .searchForm__searchbar-input {
+    width: 448px;
+    height: 56px;
+  }
+
+  .searchForm__submit {
+    width: 160px;
+    height: 56px;
+  }
+
+  .searchForm__searchbar {
+    height: 56px;
+    margin-bottom: 48px;
+  }
+}
+
+/* @media screen and (min-width: 320px) {
+  .searchForm {
+    height: 536px;
+  }
+
+  
+  .searchForm__title {
+    max-width: 285px;
+  }
+
+  .searchForm__description {
+    max-width: 288px;
+  }
+
+  .searchForm__searchbar-input {
+    width: 288px;
+  }
+
+  .searchForm__submit {
+    max-width: 288px;
+  }
+} */
