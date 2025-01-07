@@ -148,9 +148,9 @@
 .button-logout--black {
   color: #1a1b22;
   border-color: #1a1b22;
-  display: flex; /* Enables flexbox layout */
-  align-items: center; /* Vertically centers content */
-  justify-content: center; /* Horizontally centers content */
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
   border-radius: 100px;
   background: none;
   text-align: center;
@@ -162,9 +162,9 @@
 }
 
 .button-logout--white {
-  display: flex; /* Enables flexbox layout */
-  align-items: center; /* Vertically centers content */
-  justify-content: center; /* Horizontally centers content */
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
   border-radius: 100px;
   background: none;
   text-align: center;
@@ -181,9 +181,11 @@
   display: none;
 }
 
-@media screen and (min-width: 768px) and (max-width: 830px) {
+@media screen and (max-width: 768px) {
   .header {
     max-width: 768px;
+    box-sizing: border-box;
+    margin: 0 auto;
   }
 
   .header__menu-icon {
@@ -192,12 +194,13 @@
 
   .header__bar {
     padding: 14px 40px 12px;
+    box-sizing: border-box;
   }
 
   .header__background-image {
-    max-width: 768px;
-    width: 100%;
-
+    display: block; /* Remove any inline spacing issues */
+   margin: 0 auto;
+    width: 100%;  
     
   }
 
@@ -243,9 +246,9 @@
 
 @media screen and (min-width: 320px) and (max-width: 650px) {
   .header {
-    position: relative; /* Needed for the absolute positioning of the image */
-    height: 536px; /* Adjust based on the header content and desired look */
-    overflow: hidden; /* Prevent content from overflowing */
+    position: relative;
+    height: 536px; 
+    overflow: hidden;
   }
   .header__bar-button-home--main,
   .header__bar-button-signin {

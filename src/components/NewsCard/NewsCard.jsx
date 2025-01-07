@@ -50,7 +50,7 @@ const NewsCard = ({
 
   return (
     <li className="card__container">
-      <div>
+      <div className="card__image"> 
         <img
           src={article.urlToImage || article.url}
           alt={article.title}
