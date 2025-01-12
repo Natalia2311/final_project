@@ -62,10 +62,10 @@
   height: 24px;
 }
 
-@media screen and (max-width: 768px) and (max-width: 830px) {
+@media screen and (max-width: 768px) {
 
   .footer {
-
+    
     max-width: 100%; /* Prevent exceeding viewport width */
     width: 100%;     /* Ensure the content fits the viewport */
   }
@@ -84,4 +84,77 @@
 
     margin: 20px 40px 20px 0;
   }
+}
+
+@media screen and (max-width: 320px) {
+  .footer {
+    display: flex;
+    flex-direction: column; /* Stack footer elements vertically */
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box; 
+    
+  }
+
+  .footer__text {
+    font-size: 16px;        
+    line-height: 22px;      
+    width: 288px;         
+    color: #b6bcbf;
+    order: 1;
+    text-align: center;
+    margin: 38px 16px 0 16px;
+    padding-bottom: 22px;
+   
+
+  }
+
+  .footer__links {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    
+  }
+
+  .footer__links_description {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: flex-start; /* Align buttons to the left */
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0 16px;
+    font-size: 18px;
+  line-height: 48px;
+  
+
+  }
+
+  .footer__link {
+    margin: 0;
+  }
+
+  .footer__links_icons {
+    display: flex;
+    margin: 0 16px 0 0;
+    list-style: none;
+    padding: 0;
+    margin: 10px 16px 0 0;
+  }
+
+  .footer__button-github,
+  .footer__button-facebook {
+    width: 24px;          
+    height: 24px;
+   
+  }
+
+  .footer__button-home,
+  .footer__button-tripleten {
+    text-decoration: none;
+    color: black;
+    margin: 0;
+   
+  }
+
+  
 }

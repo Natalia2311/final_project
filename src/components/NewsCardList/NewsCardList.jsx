@@ -15,7 +15,10 @@ const NewsCardList = ({ articles, isLoggedIn, savedArticles, handleSaveArticle, 
   };
 
   return (
-    <section className="news-card-list">
+    <section 
+      className={`news-card-list ${
+      isSavedNewsPage ? "news-card-list--saved" : "news-card-list--main"
+    }`}>
       {!isSavedNewsPage && <h2 className="card-list__title">Search results</h2>}
       {articles.length === 0 ? null : (
         <ul className="card-list__articles">
@@ -32,14 +35,13 @@ const NewsCardList = ({ articles, isLoggedIn, savedArticles, handleSaveArticle, 
               isSavedNewsPage={isSavedNewsPage}
               handleSaveArticle={handleSaveArticle}
               savedArticles={savedArticles || []}
-              //isSaved={isSaved}
-              //articles={filteredArticles}
+             
             />
           ))}
         </ul>
       )}
       {visible < articles.length && (
-        <button className="show-more-button" onClick={showMoreItems}>
+        <button className={`show-more-button ${isSavedNewsPage ? "show-more-button--saved" : ""}`} onClick={showMoreItems}>
           Show more
         </button>
       )}

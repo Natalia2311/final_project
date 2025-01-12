@@ -71,8 +71,6 @@
 }
 
 .searchForm__submit:hover {
-  opacity: 60%;
-  transition: 0.25s ease-in-out;
   color: white;
   background: #347eff;
 }
@@ -109,6 +107,7 @@
   .searchForm__searchbar-input {
     width: 448px;
     height: 56px;
+    
   }
 
   .searchForm__submit {
@@ -130,17 +129,35 @@
   
   .searchForm__title {
     max-width: 285px;
+    margin: 30px 16px 16px 19px;
   }
 
   .searchForm__description {
     max-width: 288px;
+    padding: 0 16px 122px 16px;
   }
 
   .searchForm__searchbar-input {
-    width: 288px;
+    width: 272px;
+    padding: 17px 0 17px 16px;
+   
+    
   }
 
   .searchForm__submit {
-    max-width: 288px;
+    width: 288px;
+    position: relative;
+    padding: 16px 16px 32px 16px;
+    height: 56px;
+    margin: auto;
+
   }
-}
+  .searchForm__searchbar {
+    gap: 16px;
+    
+   
+  }
+  
+  }
+
+

@@ -12,6 +12,7 @@ import SavedNews from "../SavedNews/SavedNews";
 import ProtectedRoute from "../ProtectedRoute.jsx";
 import CurrentUserProvider from "../../contexts/CurrentUserContext.jsx";
 import api from "../../utils/api.jsx";
+import { defaultArticles } from "../../utils/constants";
 //import { savedArticles } from "../../utils/constants.jsx";
 
 function App() {
@@ -19,6 +20,10 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
   const [savedArticles, setSavedArticles] = useState([]);
+  const [filteredArticles, setFilteredArticles] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  
 
   const handleLoginModal = (email, password) => {
     auth
@@ -46,8 +51,7 @@ function App() {
       .createUser({ name, email, password })
       .then((res) => {
         console.log(res);
-        // setIsLoggedIn(true);
-        // setCurrentUser(res.data);
+       
         setActiveModal("RegistrationCompleted"); // Show success modal
      
       })
@@ -143,6 +147,24 @@ function App() {
     };
   }, [activeModal]);
 
+  const handleSearch = (keyword) => {
+    setSearchQuery(keyword);
+
+    if (!keyword) {
+      setFilteredArticles([]);
+      return;
+    }
+
+    setIsLoading(true);
+    setTimeout(() => {
+      const filtered = defaultArticles.filter((article) =>
+        article.title.toLowerCase().includes(keyword.toLowerCase())
+      );
+      setFilteredArticles(filtered);
+      setIsLoading(false);
+    }, 1500);
+  };
+
   return (
     <CurrentUserProvider isLoggedIn={isLoggedIn}  value={{ currentUser }}
     >
@@ -153,12 +175,18 @@ function App() {
           handleOpenLoginModal={handleOpenLoginModal}
           isLoggedIn={isLoggedIn}
           handleLogout={handleLogout}
+          handleSearch={handleSearch}
         />
           <Routes>
-          <Route path="/" element={<Main 
+          <Route path="/" element={
+            <Main 
+            filteredArticles={filteredArticles} 
+            isLoading={isLoading} 
+            searchQuery={searchQuery} 
           handleSaveArticle={handleSaveArticle}
           savedArticles={savedArticles} 
-          isLoggedIn={isLoggedIn}/>} />
+          isLoggedIn={isLoggedIn}/>}
+           />
           <Route
             path="/saved-news"
             element={

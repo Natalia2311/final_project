@@ -1,5 +1,4 @@
 import "./Header.css";
-import background from "../../images/background.svg";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
@@ -7,43 +6,60 @@ import logoutwhite from "../../images/logoutwhite.svg";
 import logoutblack from "../../images/logoutblack.svg";
 import { useLocation } from "react-router-dom";
 import MobileMenu from "../MobileMenu/MobileMenu";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import MenuIcon from "../MenuIcon/MenuIcon";
+import SearchForm from "../SearchForm/SearchForm";
 
-const Header = ({ handleOpenLoginModal, isLoggedIn, handleLogout }) => {
+
+const Header = ({
+  handleOpenLoginModal,
+  isLoggedIn,
+  handleLogout,
+  handleSearch,
+}) => {
   const { currentUser } = useContext(CurrentUserContext);
   const location = useLocation();
   const isSavedNewsPage = location.pathname === "/saved-news";
 
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
+  
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
+    if (!isMobileMenuOpen) {
+      setIsHidden(false); // Reset visibility
+    }
+  };
+  const handleSignInClick = () => {
+    handleOpenLoginModal(); // Open login modal
+    setMobileMenuOpen(false); // Close the mobile menu
+    setIsHidden(true); // Hide menu-icon and mobile-menu__logo
   };
 
+  useEffect(() => {
+    if (location.pathname === "/") {
+      setIsHidden(false); // Reset visibility on the home page
+    }
+  }, [location.pathname]);
+
+  
   return (
-    <header className={`header ${isSavedNewsPage ? "header--saved-news" : ""}`}>
-      {/* Only show the background image if not on the "saved-news" page */}
-      {!isSavedNewsPage && (
-        <img
-          src={background}
-          alt="background"
-          className="header__background-image"
-        />
-      )}
+    <nav className={`header ${
+      isSavedNewsPage ? "header--saved-news" : "header--main"
+    }`}>
+    
       <div className="header__bar">
-        {/* Logo */}
         <div>
           <h1
-            className={`header__bar-logo ${
-              location.pathname === "/" ? "header__bar-logo--main" : ""
-            }`}
+          
+          className={`header__bar-logo ${
+            location.pathname === "/" ? "header__bar-logo--main" : ""
+          } ${isMobileMenuOpen || isHidden ? "header__bar-logo--hidden" : ""}`}
           >
             NewsExplorer
           </h1>
         </div>
-
-        {/* Navigation buttons */}
         <div className="header__bar-buttons">
           <Link
             to="/"
@@ -87,25 +103,32 @@ const Header = ({ handleOpenLoginModal, isLoggedIn, handleLogout }) => {
             </>
           ) : (
             <button
-              onClick={handleOpenLoginModal}
-              className="header__bar-button-signin"
-            >
+            onClick={handleSignInClick}
+            className="header__bar-button-signin"
+          >
               Sign in
             </button>
           )}
         </div>
-      </div>
-      {/* Render MobileMenu if Open */}
+        </div>
+        {!isSavedNewsPage && <SearchForm handleSearch={handleSearch} />}
 
+      {!isMobileMenuOpen && !isHidden && 
+  (
+    <div className={`menu-icon ${isHidden ? "menu-icon--hidden" : ""}`}>
       <MenuIcon onClick={toggleMobileMenu} />
+    </div>
+)}
+      
       <MobileMenu
         isOpen={isMobileMenuOpen}
         onClose={toggleMobileMenu}
         isLoggedIn={isLoggedIn}
         onLogOut={handleLogout}
-        onSignInClick={handleOpenLoginModal}
+        onSignInClick={handleSignInClick}
+        isHidden={isHidden}
       />
-    </header>
+    </nav>
   );
 };
 
