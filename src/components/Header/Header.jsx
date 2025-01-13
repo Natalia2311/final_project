@@ -27,14 +27,17 @@ const Header = ({
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
-    if (!isMobileMenuOpen) {
-      setIsHidden(false); // Reset visibility
-    }
+   
   };
+  // const handleSignInClick = () => {
+  //   handleOpenLoginModal(); // Open login modal
+  //   setMobileMenuOpen(false); // Close the mobile menu
+  //   setIsHidden(true); // Hide menu-icon and mobile-menu__logo
+  // };
+
   const handleSignInClick = () => {
-    handleOpenLoginModal(); // Open login modal
-    setMobileMenuOpen(false); // Close the mobile menu
-    setIsHidden(true); // Hide menu-icon and mobile-menu__logo
+    handleOpenLoginModal(); // Ensure this triggers the modal
+    setMobileMenuOpen(false); // Close the mobile menu if it's open
   };
 
   useEffect(() => {
@@ -94,7 +97,7 @@ const Header = ({
                 >
                   {currentUser?.name || "Natalia"}
                   <img
-                    src={isSavedNewsPage ? logoutblack : logoutwhite} // Conditionally render icon
+                    src={isSavedNewsPage ? logoutblack : logoutwhite} 
                     className="button-logout-icon"
                     alt="Logout Icon"
                   />
@@ -120,14 +123,16 @@ const Header = ({
     </div>
 )}
       
-      <MobileMenu
-        isOpen={isMobileMenuOpen}
-        onClose={toggleMobileMenu}
-        isLoggedIn={isLoggedIn}
-        onLogOut={handleLogout}
-        onSignInClick={handleSignInClick}
-        isHidden={isHidden}
-      />
+      {isMobileMenuOpen && (
+        <MobileMenu
+          isOpen={isMobileMenuOpen}
+          onClose={toggleMobileMenu}
+          isLoggedIn={isLoggedIn}
+          onLogOut={handleLogout}
+          currentUser={currentUser}
+          onSignInClick={handleSignInClick}
+        />
+      )}
     </nav>
   );
 };

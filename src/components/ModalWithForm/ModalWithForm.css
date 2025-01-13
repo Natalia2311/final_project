@@ -5,7 +5,7 @@
     right: 0;
     left: 0;
     bottom: 0;
-    display: flex;
+    /* display: flex; */
     justify-content: center;
     align-items: center;
     background: rgba(0, 0, 0, 0.3);
@@ -15,7 +15,6 @@
   
   .modal__content {
     background-color: white;
-    max-width: 430px;
     width: 100%;
     border-radius: 16px;
     padding: 34px 36px 28px 36px;
@@ -67,12 +66,13 @@
 
     .modal {
       background: none;
-      top: -43px;
+     
     }
 
     .modal__content {
-    
+    max-height: none;
     padding: 16px 16px 252px 16px !important;
+    margin-top: 56px;
     }
 
     .form__button-close {

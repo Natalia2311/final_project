@@ -1,9 +1,10 @@
 import "./MobileMenu.css";
 import { Link } from "react-router-dom";
 import mobile_close from "../../images/mobile_close.svg";
+import logoutwhite from "../../images/logoutwhite.svg";
 
 
-function MobileMenu({ isOpen, onClose, isLoggedIn, onLogOut, onSignInClick, isHidden }) {
+function MobileMenu({ isOpen, onClose, isLoggedIn, onLogOut, onSignInClick, currentUser }) {
   if (!isOpen) return null;
 
   return (
@@ -34,9 +35,31 @@ function MobileMenu({ isOpen, onClose, isLoggedIn, onLogOut, onSignInClick, isHi
               Home
             </Link>
             {isLoggedIn ? (
-              <button className="mobile-menu__logout" onClick={onLogOut}>
-                Log out
-              </button>
+              <>
+            
+                <Link
+                  className="mobile-menu__saved"
+                  to="/saved-news"
+                  onClick={onClose}
+                >
+                  Saved Articles
+                </Link>
+
+                   <div className="mobile__username">
+                  <button
+                    type="button"
+                    className="mobile-button__logout"
+                    onClick={onLogOut}
+                  >
+                    {currentUser?.name || "Natalia"}
+                    <img
+                      src={logoutwhite}
+                      className="button-logout-icon"
+                      alt="Logout Icon"
+                    />
+                  </button>
+                </div>
+              </>
             ) : (
               <button
               className="mobile-menu__signin"

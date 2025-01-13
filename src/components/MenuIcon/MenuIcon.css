@@ -3,8 +3,8 @@
   .menu-icon {
     display: block; /* Ensure the icon is visible */
     position: absolute; /* Position it relative to the header */
-    top: 16px;
-    right: 16px;
+    top: 9px;
+    right: 10px;
     z-index: 999; /* Ensure it appears above other elements */
   }
 

@@ -31,7 +31,7 @@
     line-height: 24px;
   }
 
-  @media screen and (max-width: 768px) and (max-width: 830px) {
+  @media screen and (max-width: 768px) {
 
     .saved-news__title {
       padding: 24px 0 16px 40px;
@@ -53,5 +53,23 @@
       margin: 0;
     }
 
+
+  }
+
+  @media screen and (max-width: 320px)  {
+
+    .saved-news__title {
+      padding: 8px 16px 16px 16px;
+    }
+
+    .saved-news__summary {
+
+      padding: 0 16px 50px 16px;
+    }
+
+    .saved-news__keywords {
+      padding: 0 17px 32px 15px;
+     
+    }
 
   }
