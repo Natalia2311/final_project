@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
-import "./LoginModal.css";
+
 
 const LoginModal = ({
   handleCloseModal,

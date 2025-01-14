@@ -1,19 +1,16 @@
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 450px) {
 
   .menu-icon {
-    display: block; /* Ensure the icon is visible */
-    position: absolute; /* Position it relative to the header */
+    display: block; 
+    position: absolute; 
     top: 9px;
     right: 10px;
-    z-index: 999; /* Ensure it appears above other elements */
   }
 
   .header__menu-icon {
-    width: 24px; /* Adjust icon size for smaller screens */
+    width: 24px; 
     height: auto;
     display: inline-block;
-    
   }
-
   
-}
+} 

@@ -79,13 +79,16 @@
   background: #2a65cc;
 }
 
-/* .searchForm__invalid {
+.searchForm__invalid {
   position: absolute;
   bottom: -20px; 
   left: 0;
-  color: red;
+  color: #ff0000;
+  font-family: "Inter";
+  font-weight: 400;
   font-size: 12px;
-} */
+  line-height: 14.52px;
+}
 
 @media screen and (max-width: 768px) {
   .searchForm {
@@ -121,7 +124,7 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 450px) {
   .searchForm {
     height: 536px;
   }

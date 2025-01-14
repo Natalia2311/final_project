@@ -262,7 +262,7 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 450px) {
 
   .card__container {
     height: 440px;

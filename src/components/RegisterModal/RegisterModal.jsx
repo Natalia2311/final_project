@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import "./RegisterModal.css";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
 const RegisterModal = ({
