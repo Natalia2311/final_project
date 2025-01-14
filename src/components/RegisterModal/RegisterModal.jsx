@@ -181,7 +181,7 @@ const RegisterModal = ({
       </label>
  
         <button 
-        className={`modal__submit-button ${isFormValid ? "active" : ""}`}
+        className={`modal__submit-signupbutton ${isFormValid ? "active" : ""}`}
         type="submit"
         disabled={!isFormValid}>
           Sign up

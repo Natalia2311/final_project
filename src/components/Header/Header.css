@@ -291,26 +291,22 @@
     padding: 0;
   }
 
-  .header__bar-logo--hidden {
-    display: none;
-  }
-
   .header__bar-logo--white {
     font-size: 16px;
     line-height: 24px;
     padding: 16px 0 16px 16px;
     display: flex;
-  font-family: "Roboto-slab";
-  font-weight: 700;
- 
-  color: #1a1b22;
-  margin: 0;
+    font-family: "Roboto-slab";
+    font-weight: 700;
+    color: #1a1b22;
+    margin: 0;
   }
 
    .header__bar-button-saved--white,
    .button-logout--white {
     display: none;
    }
+
    .header__bar-logo {
     font-size: 16px;
     line-height: 24px;
@@ -326,5 +322,10 @@
    .header--saved-news {
     height: 56px;
    }
-  
+
+.header__bar-logo--hidden,
+   .menu-icon.hidden {
+    display: none;
+  } 
+   
 }

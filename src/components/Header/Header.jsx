@@ -6,7 +6,7 @@ import logoutwhite from "../../images/logoutwhite.svg";
 import logoutblack from "../../images/logoutblack.svg";
 import { useLocation } from "react-router-dom";
 import MobileMenu from "../MobileMenu/MobileMenu";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import MenuIcon from "../MenuIcon/MenuIcon";
 import SearchForm from "../SearchForm/SearchForm";
 
@@ -23,29 +23,26 @@ const Header = ({
 
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
+  //const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
    
   };
-  // const handleSignInClick = () => {
-  //   handleOpenLoginModal(); // Open login modal
-  //   setMobileMenuOpen(false); // Close the mobile menu
-  //   setIsHidden(true); // Hide menu-icon and mobile-menu__logo
-  // };
-
   const handleSignInClick = () => {
-    handleOpenLoginModal(); // Ensure this triggers the modal
-    setMobileMenuOpen(false); // Close the mobile menu if it's open
+    handleOpenLoginModal(); 
+    setMobileMenuOpen(false); 
+    setIsHidden(true); 
   };
 
-  useEffect(() => {
-    if (location.pathname === "/") {
-      setIsHidden(false); // Reset visibility on the home page
-    }
-  }, [location.pathname]);
+  // const handleSignInClick = () => {
+  //   handleOpenLoginModal(); 
+  //   setMobileMenuOpen(false);
+  
+  // };
 
+  
   
   return (
     <nav className={`header ${
@@ -58,7 +55,7 @@ const Header = ({
           
           className={`header__bar-logo ${
             location.pathname === "/" ? "header__bar-logo--main" : ""
-          } ${isMobileMenuOpen || isHidden ? "header__bar-logo--hidden" : ""}`}
+          } ${isMobileMenuOpen || !isHidden ? "header__bar-logo--hidden" : ""}`}
           >
             NewsExplorer
           </h1>
@@ -116,9 +113,9 @@ const Header = ({
         </div>
         {!isSavedNewsPage && <SearchForm handleSearch={handleSearch} />}
 
-      {!isMobileMenuOpen && !isHidden && 
+      {!isMobileMenuOpen && isHidden && 
   (
-    <div className={`menu-icon ${isHidden ? "menu-icon--hidden" : ""}`}>
+    <div className={`menu-icon ${!isHidden ? "menu-icon--hidden" : ""}`}>
       <MenuIcon onClick={toggleMobileMenu} />
     </div>
 )}
