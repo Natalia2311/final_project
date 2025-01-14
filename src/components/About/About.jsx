@@ -10,17 +10,17 @@ const About = () => {
           <div className="about__text">
             <h2 className="about__text-author">About The Author</h2>
             <p className="about__text-description">
-              Hello! My name is Natalia Semenova. Welcome to my TripleTen final project. 
-              I am a full stack web developer. I have learned how to 
-              create online apps such as this one with tools like JavaScript, 
-              React, Trello for work flow management, Figma, and others.
+            Hello! My name is Natalia Semenova, and welcome to my TripleTen final project.
+            I am a full-stack web developer with experience in creating online applications 
+            using tools like JavaScript, React, Trello for workflow management,
+             and Figma, among others.
             </p>
             <p className="about__text-description">
-              I have learned full stack web development from TripleTen.
-               I loved learning new skills and new ways to apply old ones.
-                It was exciting to learn how to jump into the world of software engineering
-                 so that I can be a part of building future applications 
-                 for the business I want to be a part of.
+            In TripleTen, I’ve gained invaluable skills in full-stack web development. 
+            This experience not only allowed me to acquire new technical knowledge but
+             also showed me exciting ways to enhance and apply my existing skills.
+            I’m thrilled to contribute to building innovative applications that will 
+            drive the future of businesses I hope to be a part of.
             </p>
           </div>
         </div>
