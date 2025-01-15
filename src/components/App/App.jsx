@@ -173,7 +173,7 @@ function App() {
           />
           <Routes>
             <Route
-              path="/"
+              path="/final_project/"
               element={
                 <Main
                   filteredArticles={filteredArticles}

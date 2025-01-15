@@ -16,7 +16,7 @@ function MobileMenu({ isOpen, onClose, isLoggedIn, onLogOut, onSignInClick, curr
               <Link 
               
               className="mobile-menu__logo"
-               to="/" onClick={onClose}>
+               to="/final_project/" onClick={onClose}>
                 NewsExplorer
               </Link>
             </li>
@@ -31,7 +31,7 @@ function MobileMenu({ isOpen, onClose, isLoggedIn, onLogOut, onSignInClick, curr
             </li>
           </ul>
           <div className="mobile-menu__container-content">
-            <Link className="mobile-menu__home" to="/" onClick={onClose}>
+            <Link className="mobile-menu__home" to="/final_project/" onClick={onClose}>
               Home
             </Link>
             {isLoggedIn ? (

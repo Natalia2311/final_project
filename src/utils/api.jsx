@@ -2,6 +2,8 @@ import { savedArticles } from "./constants";
 
 const baseUrl = "http://localhost:3001";
 
+//https://natalia2311.github.io/final_project/
+
 const getSavedArticles = (token) => {
     const url = `${baseUrl}/saved-articles`; 
     console.log(`Fetching saved articles from: ${url}`);
