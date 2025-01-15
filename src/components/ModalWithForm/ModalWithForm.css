@@ -8,12 +8,13 @@
   justify-content: center;
   align-items: center;
   background: rgba(0, 0, 0, 0.3);
-  width: 100%;
+ 
 }
 
 .modal__content {
   background-color: white;
   width: 100%;
+  max-width: 430px;
   border-radius: 16px;
   padding: 34px 36px 28px 36px;
   box-sizing: border-box;
@@ -113,6 +114,12 @@
 }
 
 .modal__submit-button.active {
+  background-color: #2f71e5;
+  color: white;
+  cursor: pointer;
+}
+
+.modal__submit-signupbutton.active {
   background-color: #2f71e5;
   color: white;
   cursor: pointer;
@@ -227,6 +234,10 @@
 
   .modal__submit-signupbutton {
     padding: 20px 100px;
-    margin-top: 23px;
+    margin: 25px auto 0;
+  }
+
+  .modal__submit-button {
+    margin: auto;
   }
 }

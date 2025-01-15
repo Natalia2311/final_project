@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
-
 const LoginModal = ({
   handleCloseModal,
   onSubmit,
@@ -9,70 +8,61 @@ const LoginModal = ({
   handleOpenLoginModal,
 }) => {
   const [email, setEmail] = useState("");
-  const [emailError, setEmailError] = useState(""); // Error message state
+  const [emailError, setEmailError] = useState("");
   const [password, setPassword] = useState("");
-  const [passwordError, setPasswordError] = useState(""); // Error message state
+  const [passwordError, setPasswordError] = useState("");
   const [isFormValid, setIsFormValid] = useState(false);
-
-
 
   const handleEmailChange = (e) => {
     const emailValue = e.target.value;
     setEmail(emailValue);
 
-    // Validate email only if it is not empty
     if (emailValue) {
       const isValid = validateEmail(emailValue);
       if (!isValid) {
         setEmailError("Invalid email address");
       } else {
-        setEmailError(""); // Clear error if email is valid
+        setEmailError("");
       }
     } else {
-      setEmailError(""); // Clear error if email is empty
+      setEmailError("");
     }
   };
-  
+
   const handlePasswordChange = (e) => {
     const passwordValue = e.target.value;
     setPassword(passwordValue);
 
-    // Validate password only if it is not empty
     if (passwordValue) {
       const isValid = validatePassword(passwordValue);
       if (!isValid) {
         setPasswordError("Password must be at least 8 characters");
       } else {
-        setPasswordError(""); // Clear error if password is valid
+        setPasswordError("");
       }
     } else {
-      setPasswordError(""); // Clear error if password is empty
+      setPasswordError("");
     }
   };
 
-
-  // Basic email validation: check if email contains '@' and '.' using split
   const validateEmail = (email) => {
-    const emailParts = email.split('@');
-    if (emailParts.length === 2 && emailParts[1].includes('.')) {
-      setEmailError(""); // Clear error if email is valid
+    const emailParts = email.split("@");
+    if (emailParts.length === 2 && emailParts[1].includes(".")) {
+      setEmailError("");
       return true;
     }
     setEmailError("Invalid email address");
     return false;
   };
 
-  // Password validation: check if password has at least 6 characters
   const validatePassword = (password) => {
     if (password.length < 8) {
       setPasswordError("Password must be at least 8 characters");
       return false;
     }
-    setPasswordError(""); // Clear error if password is valid
+    setPasswordError("");
     return true;
   };
-  // Validate the form (both email and password)
-  
 
   const validateForm = () => {
     const isEmailValid = !emailError && email !== "";
@@ -80,17 +70,14 @@ const LoginModal = ({
     setIsFormValid(isEmailValid && isPasswordValid);
   };
 
-   // Revalidate form whenever email or password changes
-   useEffect(() => {
+  useEffect(() => {
     validateForm();
   }, [email, password, emailError, passwordError]);
 
-
-  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
     if (isFormValid) {
-      onSubmit(email, password); // This should call the handleLoginModal function
+      onSubmit(email, password);
     }
   };
 
@@ -108,7 +95,6 @@ const LoginModal = ({
       handleOpenLoginModal={handleOpenLoginModal}
       className="sign in"
       onClick={handleOpenSignupModal}
-      
     >
       <label className="modal__label">
         Email
@@ -121,7 +107,7 @@ const LoginModal = ({
           value={email}
           onChange={handleEmailChange}
         />
-         {email && emailError && (
+        {email && emailError && (
           <span className="modal__error-message">{emailError}</span>
         )}
       </label>
@@ -129,7 +115,9 @@ const LoginModal = ({
       <label className="modal__label">
         Password
         <input
-          className={`modal__form-input ${password ? "modal__input-active" : ""}`}
+          className={`modal__form-input ${
+            password ? "modal__input-active" : ""
+          }`}
           name="password"
           type="password"
           placeholder="Enter password"
@@ -146,7 +134,6 @@ const LoginModal = ({
         className={`modal__submit-button ${isFormValid ? "active" : ""}`}
         type="submit"
         disabled={!isFormValid}
-
       >
         Sign in
       </button>

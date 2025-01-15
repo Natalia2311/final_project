@@ -5,11 +5,9 @@
     height: 100vh;
     background-color: #F5F6F7;
     max-height: 282px;
-    flex-direction: column;
-    
+    flex-direction: column;   
     
 }
-
 .preloader__text {
     font-family: "Roboto";
     font-weight: 400;
@@ -22,7 +20,6 @@
     padding-bottom: 80px;
 
 }
-
 .circle-preloader {
     display: block;
     width: 50px;

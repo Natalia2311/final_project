@@ -7,7 +7,6 @@ const NewsCard = ({
   article,
   isSavedNewsPage,
   handleSaveArticle,
-  savedArticles,
   isLoggedIn,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -17,14 +16,12 @@ const NewsCard = ({
 
   const handleSave = () => {
     if (!isLoggedIn) {
-      setIsHovered(true); // Show tooltip if the user is not logged in
-      return; // Prevent further execution
+      setIsHovered(true);
+      return;
     }
 
-    // Toggle the saved state
     setIsSaved((prevState) => !prevState);
 
-    // Notify the parent component to update saved articles
     handleSaveArticle({ id: article.id, isSaved: !isSaved });
   };
 
@@ -50,14 +47,13 @@ const NewsCard = ({
 
   return (
     <li className="card__container">
-      <div className="card__image"> 
+      <div className="card__image">
         <img
           src={article.urlToImage || article.url}
           alt={article.title}
           className="card__image"
         />
 
-        {/* Render the bookmark button only if not on the Saved News Page */}
         {!isSavedNewsPage && (
           <div
             className={`card__bookmark ${
@@ -77,7 +73,6 @@ const NewsCard = ({
           </div>
         )}
 
-        {/* Render the remove button only if on the Saved News Page */}
         {isSavedNewsPage ? (
           <div
             className="news-card__remove-button-container"

@@ -10,7 +10,6 @@ import { useState } from "react";
 import MenuIcon from "../MenuIcon/MenuIcon";
 import SearchForm from "../SearchForm/SearchForm";
 
-
 const Header = ({
   handleOpenLoginModal,
   isLoggedIn,
@@ -23,39 +22,30 @@ const Header = ({
 
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
-  //const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
-  
+ 
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
-   
   };
   const handleSignInClick = () => {
-    handleOpenLoginModal(); 
-    setMobileMenuOpen(false); 
-    setIsHidden(true); 
+    handleOpenLoginModal();
+    setMobileMenuOpen(false);
+    setIsHidden(true);
   };
 
-  // const handleSignInClick = () => {
-  //   handleOpenLoginModal(); 
-  //   setMobileMenuOpen(false);
-  
-  // };
-
-  
   
   return (
-    <nav className={`header ${
-      isSavedNewsPage ? "header--saved-news" : "header--main"
-    }`}>
-    
+    <nav
+      className={`header ${
+        isSavedNewsPage ? "header--saved-news" : "header--main"
+      }`}
+    >
       <div className="header__bar">
         <div>
           <h1
-          
-          className={`header__bar-logo ${
-            location.pathname === "/" ? "header__bar-logo--main" : ""
-          } ${isMobileMenuOpen || !isHidden ? "header__bar-logo--hidden" : ""}`}
+            className={`header__bar-logo ${
+              location.pathname === "/" ? "header__bar-logo--main" : ""
+            } ${isMobileMenuOpen ? "header__bar-logo--hidden" : ""}`}
           >
             NewsExplorer
           </h1>
@@ -94,7 +84,7 @@ const Header = ({
                 >
                   {currentUser?.name || "Natalia"}
                   <img
-                    src={isSavedNewsPage ? logoutblack : logoutwhite} 
+                    src={isSavedNewsPage ? logoutblack : logoutwhite}
                     className="button-logout-icon"
                     alt="Logout Icon"
                   />
@@ -103,23 +93,22 @@ const Header = ({
             </>
           ) : (
             <button
-            onClick={handleSignInClick}
-            className="header__bar-button-signin"
-          >
+              onClick={handleSignInClick}
+              className="header__bar-button-signin"
+            >
               Sign in
             </button>
           )}
         </div>
-        </div>
-        {!isSavedNewsPage && <SearchForm handleSearch={handleSearch} />}
+      </div>
+      {!isSavedNewsPage && <SearchForm handleSearch={handleSearch} />}
 
-      {!isMobileMenuOpen && isHidden && 
-  (
-    <div className={`menu-icon ${!isHidden ? "menu-icon--hidden" : ""}`}>
-      <MenuIcon onClick={toggleMobileMenu} />
-    </div>
-)}
-      
+      {!isMobileMenuOpen && (
+        <div className={`menu-icon ${!isHidden ? "menu-icon--hidden" : ""}`}>
+          <MenuIcon onClick={toggleMobileMenu} />
+        </div>
+      )}
+
       {isMobileMenuOpen && (
         <MobileMenu
           isOpen={isMobileMenuOpen}

@@ -1,7 +1,5 @@
 import "./ModalWithForm.css";
 
-
-
 const ModalWithForm = ({ 
   name, 
   title, 

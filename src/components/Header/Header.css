@@ -12,14 +12,10 @@
 
 }
 
-
-
 .header--saved-news {
   background: white;
   height: 80px;
 }
-
-
 
 .header__bar {
   width: 100%;
@@ -50,8 +46,6 @@
 .header__bar-buttons {
   display: flex; 
   align-items: center; 
-  
- 
 }
 
 .header__bar-button-home {
@@ -139,8 +133,6 @@
   margin: 19px 104px 13px 0;
 }
 
-
-
 .username {
   font-family: "Roboto";
   font-weight: 500;
@@ -189,7 +181,7 @@
 }
 
 .hidden {
-  display: none !important; /* Force the element to be hidden */
+  display: none !important; 
 }
 
 @media screen and (max-width: 768px) {

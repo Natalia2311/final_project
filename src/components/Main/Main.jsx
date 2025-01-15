@@ -6,40 +6,40 @@ import Preloader from "../Preloader/Preloader";
 import NotFound from "../NotFound/NotFound";
 import { useLocation } from "react-router-dom";
 
-
-
-function Main({   handleSaveArticle,
+function Main({
+  handleSaveArticle,
   savedArticles,
   isLoggedIn,
   filteredArticles,
   isLoading,
-  searchQuery }) {
-  
-  
+  searchQuery,
+}) {
   const location = useLocation();
   const isSavedNewsPage = location.pathname === "/saved-news";
-  
+
   return (
-    <main className="main" >
-      
-      {isLoading ? ( 
+    <main className="main">
+      {isLoading ? (
         <Preloader />
       ) : (
-        <section  className={`card_section ${
-          isSavedNewsPage ? "card_section--saved" : ""
-        }`}>
+        <section
+          className={`card_section ${
+            isSavedNewsPage ? "card_section--saved" : ""
+          }`}
+        >
           {filteredArticles.length > 0 ? (
             <NewsCardList
-             articles={filteredArticles}
-             handleSaveArticle={handleSaveArticle}
-             savedArticles={savedArticles}  
-             isLoggedIn={isLoggedIn}/>
+              articles={filteredArticles}
+              handleSaveArticle={handleSaveArticle}
+              savedArticles={savedArticles}
+              isLoggedIn={isLoggedIn}
+            />
           ) : (
             searchQuery && <NotFound />
           )}
         </section>
       )}
-      
+
       <About />
     </main>
   );

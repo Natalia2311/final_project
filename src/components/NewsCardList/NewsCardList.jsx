@@ -1,14 +1,10 @@
 import React from "react";
 import NewsCard from "../NewsCard/NewsCard";
 import "./NewsCardList.css";
-
 import { useState } from "react";
-
 
 const NewsCardList = ({ articles, isLoggedIn, savedArticles, handleSaveArticle, isSavedNewsPage }) => {
   const [visible, setVisible] = useState(3);
-
-  
 
   const showMoreItems = () => {
     setVisible(visible + 3);

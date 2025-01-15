@@ -1,9 +1,6 @@
 .about {
    display: flex;
-   max-width: 1440px;
-  
-   
-  
+   max-width: 1440px; 
   }
   
   .about__container {
@@ -16,14 +13,10 @@
     width: 464px; 
     height: auto; 
     border-radius: 1000px;
-    margin: 80px 56px 80px 104px;
-    
-    
-    
+    margin: 80px 56px 80px 104px;   
   }
   
-  .about__text {
-    
+  .about__text {   
     max-width: 600px;
   }
 
@@ -43,7 +36,6 @@
     font-size: 18px;
     line-height: 24px;
     margin: 24px auto 0;
-
    
   }
 
@@ -51,11 +43,8 @@
 
     .about {
 
-      margin-top: 0;
-      
+      margin-top: 0;   
     }
-
-   
 
     .about__image {
    
@@ -67,7 +56,6 @@
     }
 
     .about__text {
-    
       max-width: 424px;
     }
   
@@ -76,19 +64,16 @@
       font-size: 30px;
       line-height: 40px;
       margin-top: 40px;
-      
       }
 
-      .about__text-description {
+    .about__text-description {
        
-        margin: 16px auto 0;     
+     margin: 16px auto 0;     
       }    
-
-
 
   }
 
-  @media screen and (max-width: 320px) {
+  @media screen and (max-width: 450px) {
 
     .about__image {
 

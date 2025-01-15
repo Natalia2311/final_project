@@ -13,16 +13,12 @@
 
 @media screen and (max-width: 768px) {
   .main {
-    max-width: 768px;
-    
-    
+    max-width: 768px; 
   }
 
   .card_section {
-    padding: 0 40px 0 40px;
-    
+    padding: 0 40px 0 40px; 
   }
-
 }
 
 @media screen and (max-width: 450px) {
@@ -30,6 +26,5 @@
       padding: 0 16px 0 16px;
       
     }
-
   }
 

@@ -13,7 +13,6 @@ import ProtectedRoute from "../ProtectedRoute.jsx";
 import CurrentUserProvider from "../../contexts/CurrentUserContext.jsx";
 import api from "../../utils/api.jsx";
 import { defaultArticles } from "../../utils/constants";
-//import { savedArticles } from "../../utils/constants.jsx";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
@@ -23,26 +22,24 @@ function App() {
   const [filteredArticles, setFilteredArticles] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  
 
   const handleLoginModal = (email, password) => {
     auth
-      .login({ email, password })  // Calls the login function
+      .login({ email, password })
       .then((res) => {
         console.log(res);
         if (res) {
-          localStorage.setItem("token", res); 
-           // Save the token
+          localStorage.setItem("token", res);
+
           auth.checkToken(res).then((data) => {
-            setCurrentUser(data.user);  // Set the user data
-            setIsLoggedIn(true);  // Set the user as logged in
-            handleCloseModal();  // Close the modal
-            
+            setCurrentUser(data.user); // Set the user data
+            setIsLoggedIn(true); // Set the user as logged in
+            handleCloseModal();
           });
         }
       })
       .catch((err) => {
-        console.error(err);  // Handle errors here
+        console.error(err);
       });
   };
 
@@ -51,9 +48,8 @@ function App() {
       .createUser({ name, email, password })
       .then((res) => {
         console.log(res);
-       
-        setActiveModal("RegistrationCompleted"); // Show success modal
-     
+
+        setActiveModal("RegistrationCompleted");
       })
       .catch((error) => {
         console.log(error);
@@ -66,7 +62,6 @@ function App() {
     setCurrentUser({});
   };
 
-  
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
@@ -74,7 +69,7 @@ function App() {
         .checkToken(token)
         .then((res) => {
           console.log("Token valid:", res.data);
-          setCurrentUser(res.data); ;
+          setCurrentUser(res.data);
           setIsLoggedIn(true);
         })
         .catch((error) => {
@@ -85,23 +80,23 @@ function App() {
     }
   }, []);
 
-
-
   const handleSaveArticle = ({ id, isSaved }) => {
-    const token = localStorage.getItem("token"); // Correctly retrieve the token
-    
+    const token = localStorage.getItem("token");
+
     if (!isSaved) {
       auth
         .saveArticleItem(id, token)
         .then((res) => {
-          setSavedArticles((prev) => [...prev, { id, ...res.data }]); // Add the article to saved articles
+          setSavedArticles((prev) => [...prev, { id, ...res.data }]);
         })
         .catch((err) => console.error("Error saving article:", err));
     } else {
       auth
         .unsaveArticleItem(id, token)
         .then(() => {
-          setSavedArticles((prev) => prev.filter((article) => article.id !== id)); // Remove the article
+          setSavedArticles((prev) =>
+            prev.filter((article) => article.id !== id)
+          );
         })
         .catch((err) => console.error("Error unsaving article:", err));
     }
@@ -115,7 +110,7 @@ function App() {
         .catch((err) => console.error("Failed to fetch saved articles:", err));
     }
   }, []);
-  
+
   const handleOpenLoginModal = () => {
     setActiveModal("login");
   };
@@ -166,66 +161,68 @@ function App() {
   };
 
   return (
-    <CurrentUserProvider isLoggedIn={isLoggedIn}  value={{ currentUser }}
-    >
-    <Router>
-      <div className="page">
-        <Header
-          onCreateModal={handleCreateModal}
-          handleOpenLoginModal={handleOpenLoginModal}
-          isLoggedIn={isLoggedIn}
-          handleLogout={handleLogout}
-          handleSearch={handleSearch}
-        />
+    <CurrentUserProvider isLoggedIn={isLoggedIn} value={{ currentUser }}>
+      <Router>
+        <div className="page">
+          <Header
+            onCreateModal={handleCreateModal}
+            handleOpenLoginModal={handleOpenLoginModal}
+            isLoggedIn={isLoggedIn}
+            handleLogout={handleLogout}
+            handleSearch={handleSearch}
+          />
           <Routes>
-          <Route path="/" element={
-            <Main 
-            filteredArticles={filteredArticles} 
-            isLoading={isLoading} 
-            searchQuery={searchQuery} 
-          handleSaveArticle={handleSaveArticle}
-          savedArticles={savedArticles} 
-          isLoggedIn={isLoggedIn}/>}
-           />
-          <Route
-            path="/saved-news"
-            element={
-              <ProtectedRoute isLoggedIn={isLoggedIn}>
-                <SavedNews 
-                handleSaveArticle={handleSaveArticle}
-                isLoggedIn={isLoggedIn} />
-              </ProtectedRoute>
-            }
-          />
-        </Routes>
-        <Footer />
-        {activeModal === "login" && (
-          <LoginModal
-            handleOpenLoginModal={handleOpenLoginModal}
-            handleCloseModal={handleCloseModal}
-            handleOpenSignupModal={handleOpenSighupModal}
-            onSubmit={handleLoginModal}
-          />
-        )}
-        {activeModal === "signup" && (
-          <RegisterModal
-            handleOpenSighupModal={handleOpenSighupModal}
-            handleCloseModal={handleCloseModal}
-            onSubmit={handleRegisterModal}
-            handleOpenLoginModal={handleOpenLoginModal}
-          />
-        )}
-        {activeModal === "RegistrationCompleted" && (
-          <RegisterSuccess
-            handleCloseModal={handleCloseModal}
-            handleOpenLoginModal={handleOpenLoginModal}
-          />
-        )}
-      </div>
-    </Router>
+            <Route
+              path="/"
+              element={
+                <Main
+                  filteredArticles={filteredArticles}
+                  isLoading={isLoading}
+                  searchQuery={searchQuery}
+                  handleSaveArticle={handleSaveArticle}
+                  savedArticles={savedArticles}
+                  isLoggedIn={isLoggedIn}
+                />
+              }
+            />
+            <Route
+              path="/saved-news"
+              element={
+                <ProtectedRoute isLoggedIn={isLoggedIn}>
+                  <SavedNews
+                    handleSaveArticle={handleSaveArticle}
+                    isLoggedIn={isLoggedIn}
+                  />
+                </ProtectedRoute>
+              }
+            />
+          </Routes>
+          <Footer />
+          {activeModal === "login" && (
+            <LoginModal
+              handleOpenLoginModal={handleOpenLoginModal}
+              handleCloseModal={handleCloseModal}
+              handleOpenSignupModal={handleOpenSighupModal}
+              onSubmit={handleLoginModal}
+            />
+          )}
+          {activeModal === "signup" && (
+            <RegisterModal
+              handleOpenSighupModal={handleOpenSighupModal}
+              handleCloseModal={handleCloseModal}
+              onSubmit={handleRegisterModal}
+              handleOpenLoginModal={handleOpenLoginModal}
+            />
+          )}
+          {activeModal === "RegistrationCompleted" && (
+            <RegisterSuccess
+              handleCloseModal={handleCloseModal}
+              handleOpenLoginModal={handleOpenLoginModal}
+            />
+          )}
+        </div>
+      </Router>
     </CurrentUserProvider>
   );
-};
+}
 export default App;
-
-
