@@ -162,7 +162,7 @@ function App() {
 
   return (
     <CurrentUserProvider isLoggedIn={isLoggedIn} value={{ currentUser }}>
-      <Router>
+   
         <div className="page">
           <Header
             onCreateModal={handleCreateModal}
@@ -173,7 +173,7 @@ function App() {
           />
           <Routes>
             <Route
-              path="/final_project/"
+              path="/"
               element={
                 <Main
                   filteredArticles={filteredArticles}
@@ -221,7 +221,7 @@ function App() {
             />
           )}
         </div>
-      </Router>
+
     </CurrentUserProvider>
   );
 }

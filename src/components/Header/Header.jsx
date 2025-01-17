@@ -44,7 +44,7 @@ const Header = ({
         <div>
           <h1
             className={`header__bar-logo ${
-              location.pathname === "/final_project/" ? "header__bar-logo--main" : ""
+              location.pathname === "/" ? "header__bar-logo--main" : ""
             } ${isMobileMenuOpen ? "header__bar-logo--hidden" : ""}`}
           >
             NewsExplorer
@@ -52,9 +52,9 @@ const Header = ({
         </div>
         <div className="header__bar-buttons">
           <Link
-            to="/final_project/"
+            to="/"
             className={`header__bar-button-home ${
-              location.pathname === "/final_project/" ? "header__bar-button-home--main" : ""
+              location.pathname === "/" ? "header__bar-button-home--main" : ""
             }`}
           >
             Home

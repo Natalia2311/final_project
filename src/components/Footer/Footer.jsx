@@ -14,7 +14,7 @@ const Footer = () => {
       <nav className="footer__links">
         <ul className="footer__links_description">
           <li className="footer__link">
-            <Link to="/final_project/">
+            <Link to="/">
               <button className="footer__button-home" type="button">
                 Home
               </button>
