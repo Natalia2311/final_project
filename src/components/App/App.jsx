@@ -142,22 +142,34 @@ function App() {
     };
   }, [activeModal]);
 
+ 
+
   const handleSearch = (keyword) => {
     setSearchQuery(keyword);
-
+  
     if (!keyword) {
-      setFilteredArticles([]);
+      setFilteredArticles([]); 
       return;
     }
-
+  
     setIsLoading(true);
-    setTimeout(() => {
-      const filtered = defaultArticles.filter((article) =>
-        article.title.toLowerCase().includes(keyword.toLowerCase())
-      );
-      setFilteredArticles(filtered);
-      setIsLoading(false);
-    }, 1500);
+  
+    api
+      .searchArticles(keyword) 
+      .then((articles) => {
+        const articlesWithIds = articles.map((article) => ({
+          ...article,
+          id: article.id,
+        }));
+        setFilteredArticles(articlesWithIds);
+      })
+      .catch((error) => {
+        console.error("Error fetching search results:", error);
+        setFilteredArticles([]); 
+      })
+      .finally(() => {
+        setIsLoading(false);
+      }, 1500);
   };
 
   return (

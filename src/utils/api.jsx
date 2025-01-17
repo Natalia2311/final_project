@@ -1,18 +1,37 @@
 import { savedArticles } from "./constants";
+import { handleResponse } from "../utils/auth";
 
-const baseUrl = "http://localhost:3001";
+export const APIKey = "bbf9b310100f45e1aa928a364cf42779";
+
+const baseUrl = "https://newsapi.org/v2/everything";
 
 
 
-const getSavedArticles = (token) => {
-    const url = `${baseUrl}/saved-articles`; 
-    console.log(`Fetching saved articles from: ${url}`);
+const api = {
+
   
-    return Promise.resolve({ articles: savedArticles });
-  };
+
+  searchArticles: (query) => {
+    const url = `${baseUrl}?q=${encodeURIComponent(query)}&apiKey=${APIKey}`;
+    console.log(`Searching for articles with query: ${query}`);
+    return fetch(url)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Error fetching search results: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => data.articles);
+  },
 
 
+  getSavedArticles: (token) => {
+    const url = `${baseUrl}/saved-articles`;
+    console.log(`Fetching saved articles from: ${url}`);
+    return Promise.resolve({ articles: [] });
+  },
 
-const api = { getSavedArticles };
+  
+};
 
 export default api;

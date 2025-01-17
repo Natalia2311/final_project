@@ -18,9 +18,9 @@ const NewsCardList = ({ articles, isLoggedIn, savedArticles, handleSaveArticle, 
       {!isSavedNewsPage && <h2 className="card-list__title">Search results</h2>}
       {articles.length === 0 ? null : (
         <ul className="card-list__articles">
-          {articles.slice(0, visible).map((article) => (
+          {articles.slice(0, visible).map((article, index) => (
             <NewsCard
-              key={article.id}
+            key={article.id || index} 
               article={article}
               id={article.id}
               url={article.url}
