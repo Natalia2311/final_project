@@ -103,7 +103,9 @@ const NewsCard = ({
         <p className="card__date">{formattedDate}</p>
         <h3 className="card__title">{article.title}</h3>
         <p className="card__text">{article.description}</p>
-        <p className="card__source">{article.source?.name || "Unknown Source"}</p>
+        <p className="card__source">
+          {article.source?.name || "Unknown Source"}
+        </p>
       </div>
     </li>
   );

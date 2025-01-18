@@ -194,7 +194,7 @@
 }
 
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 451px) and (max-width: 768px) {
 
   .card__container {
     height: 420px;
@@ -234,6 +234,7 @@
 
   .card__source {
      padding: 0 16px 16px 16px;
+     margin: 0;
  
   }
 
@@ -265,6 +266,8 @@
   .card__container {
     height: 440px;
     max-width: 288px;
+    
+    
   }
 
  .card__image {
@@ -312,5 +315,14 @@
    padding-right: 16px;
    padding-top: 16px;
   }
+  .card__title,
+.card__text,
+.card__source {
+    white-space: normal; /* Allow text wrapping */
+    word-wrap: break-word; /* Break long words */
+    overflow-wrap: break-word; /* Break long words */
+}
+
+  
  }
 

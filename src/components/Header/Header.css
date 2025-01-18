@@ -184,7 +184,7 @@
   display: none !important; 
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 451px) and (max-width: 768px) {
   .header--main {
     height: 400px;
     background: url("../../images/background.svg") no-repeat center;
@@ -196,7 +196,7 @@
   }
 
   .header__bar {
-    max-width: 768px;
+    /* max-width: 768px; */
 
   }
 
@@ -259,7 +259,7 @@
 
   .header--main {
 
-    height: 536px; 
+    height: 536px;   
   }
  
   .header__bar-button-home--main,
