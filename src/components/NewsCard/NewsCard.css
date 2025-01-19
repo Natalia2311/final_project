@@ -30,11 +30,14 @@
   border-bottom-left-radius: 16px;
   background: white;
   cursor: pointer;
-  justify-content: space-between;
   overflow: hidden;
+  /* justify-content: space-between; */
+  /* flex-grow: 1;  */
+ 
   height: 100%;
 
 }
+
 
 .card__date {
   font-size: 18px;
@@ -42,8 +45,7 @@
   color: #b6bcbf;
   font-family: "Inter";
   font-weight: 400;
-  margin: 0;
-  padding: 20px 0 12px 24px;
+  margin: 20px 0 12px 24px;
 }
 
 .card__title {
@@ -52,9 +54,9 @@
   font-size: 26px;
   line-height: 30px;
   color: #1a1b22;
-  margin: 0;
   max-width: 352px;
-  padding: 0 24px 0 24px;
+  margin: 0 24px;
+  flex-shrink: 0;
  
 }
 
@@ -65,10 +67,9 @@
   line-height: 22px;
   color: #1a1b22;
   max-width: 352px;
-  padding: 16px 24px 0 24px;
-  margin: 0;
-  overflow: hidden;
- 
+  margin: 16px auto 18px;
+  flex-grow: 1; 
+  
 }
 
 .card__source {
@@ -78,9 +79,7 @@
   line-height: 20px;
   letter-spacing: 0.4px;
   color: #b6bcbf;
-  margin-top: auto;
-  padding: 18px 0 24px 24px;
- 
+  margin: 0 0 24px 24px;
 }
 
 .card__bookmark {
@@ -315,13 +314,6 @@
    padding-right: 16px;
    padding-top: 16px;
   }
-  .card__title,
-.card__text,
-.card__source {
-    white-space: normal; /* Allow text wrapping */
-    word-wrap: break-word; /* Break long words */
-    overflow-wrap: break-word; /* Break long words */
-}
 
   
  }

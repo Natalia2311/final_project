@@ -1,5 +1,5 @@
 .searchForm {
-  height: 496px;
+  /* height: 496px; */
   position: relative;
 }
 
@@ -30,8 +30,7 @@
   font-size: 18px;
   line-height: 24px;
   color: white;
-  margin: 0;
-  padding: 0 0 88px;
+  margin: 0 0 88px 0;
 }
 
 .searchForm__searchbar {
@@ -39,6 +38,7 @@
   flex-direction: column;
   position: relative;
   height: 64px;
+  margin: 0 auto 80px;
 }
 
 .searchForm__searchbar-input {
@@ -93,19 +93,20 @@
 
 @media screen and (min-width: 451px) and (max-width: 768px) {
   .searchForm {
-    height: 400px;
+    /* height: 400px; */
   }
 
   .searchForm__description {
     max-width: 452px;
-    padding: 0 156px 48px 160px;
+    margin: 0 0 48px;
+    
   }
 
   .searchForm__title {
     max-width: 385px;
     font-size: 36px;
     line-height: 40px;
-    margin: 38px 220px 16px 160px;
+    margin: 38px auto 16px;
   }
 
   .searchForm__searchbar-input {
