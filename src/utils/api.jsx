@@ -1,16 +1,16 @@
 
 export const APIKey = "bbf9b310100f45e1aa928a364cf42779";
 
-const baseUrl = "https://newsapi.org/v2/everything";
+const baseUrl = "https://nomoreparties.co/news/v2/everything";
 
-
+const proxyUrl = "https://cors-anywhere.herokuapp.com/";
 
 const api = {
 
   
 
   searchArticles: (query) => {
-    const url = `${baseUrl}?q=${encodeURIComponent(query)}&apiKey=${APIKey}`;
+    const url = `${proxyUrl}${baseUrl}?q=${encodeURIComponent(query)}&apiKey=${APIKey}`;
     console.log(`Searching for articles with query: ${query}`);
     return fetch(url)
       .then((response) => {
