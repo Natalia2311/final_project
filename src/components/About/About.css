@@ -1,6 +1,7 @@
 .about {
    display: flex;
    max-width: 1440px; 
+   background: white;
   }
   
   .about__container {
@@ -20,7 +21,7 @@
     max-width: 600px;
   }
 
-  .about__text-author {
+  .about__author {
   font-family: "Roboto-slab";
   font-weight: 400;
   font-size: 40px;
@@ -30,7 +31,7 @@
   }
   
   
-  .about__text-description {
+  .about__description {
     font-family: "Roboto";
     font-weight: 400;
     font-size: 18px;
@@ -39,7 +40,7 @@
    
   }
 
-  @media screen and (min-width: 451px) and (max-width: 768px) {
+  @media screen and (min-width: 571px) and (max-width: 768px)  {
 
     .about {
 
@@ -59,21 +60,21 @@
       max-width: 424px;
     }
   
-    .about__text-author {
+    .about__author {
      
       font-size: 30px;
       line-height: 40px;
       margin-top: 40px;
       }
 
-    .about__text-description {
+    .about__description {
        
      margin: 16px auto 0;     
       }    
 
   }
 
-  @media screen and (max-width: 450px) {
+  @media screen and (min-width: 320px) and (max-width: 570px) {
 
     .about__image {
 
@@ -93,13 +94,13 @@
       
     }
   
-    .about__text-author {
+    .about__author {
       font-size: 30px;
       line-height: 40px;
       margin-top: 0; 
     }
   
-    .about__text-description {
+    .about__description {
       font-size: 16px;
       line-height: 22px;
       margin-top: 16px;

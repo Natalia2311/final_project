@@ -1,4 +1,4 @@
-@media screen and (max-width: 450px) {
+@media screen and (min-width: 320px) and (max-width: 570px) {
 
   .mobile-menu-overlay {
     position: fixed;
@@ -10,6 +10,8 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
+  
+    z-index: 1;
   }
     .mobile-menu {
       display: flex;
@@ -26,12 +28,12 @@
       font-size: 16px;
       line-height: 24px;
       color: white; 
-      padding: 16px 0 16px 16px;
+      margin: 16px 0 16px 16px;
      
     }
   
     .mobile-menu__container {
-      max-width: 450px;
+   
       width: 100%;
       background-color: #1A1B22;
       position: fixed;
@@ -53,7 +55,7 @@
     .mobile-menu__container-content {
       display: flex;
       flex-direction: column;
-      padding-left: 16px;
+      margin-left: 16px;
     }
 
     .mobile-menu__close-button {
@@ -65,7 +67,7 @@
     }
 
     .header__menu-close {
-      padding: 16px 16px 16px 0;
+      margin: 16px 16px 16px 0;
       position: relative;
       right: -6px;
     }
@@ -87,7 +89,7 @@
   background: none;
   color: white;
   text-decoration: none;
-  padding-bottom: 22px;
+  margin-bottom: 22px;
   
    }
 
@@ -113,7 +115,7 @@
    font-size: 18px;
    text-decoration: none;
    color: white;
-   padding-bottom: 42px;
+   margin-bottom: 42px;
    }
 
    .mobile__username {
@@ -123,7 +125,7 @@
     font-size: 18px;
     text-align: center;
     color: white;
-    padding-bottom: 22px;
+    margin-bottom: 22px;
 
   }
   .mobile-button__logout {

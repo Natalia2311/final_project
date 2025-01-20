@@ -11,45 +11,47 @@ const Footer = () => {
       <p className="footer__text">
         &copy; {currentYear} Supersite, Powered by News Api
       </p>
-      <nav className="footer__links">
-        <ul className="footer__links_description">
+       <nav className="footer__nav">
+        <ul className="footer__link-list">
           <li className="footer__link">
-            <Link to="/">
-              <button className="footer__button-home" type="button">
-                Home
-              </button>
+            <Link to="/" className="footer__button footer__button--home">
+              Home
             </Link>
           </li>
           <li className="footer__link">
             <a
               href="https://tripleten.com/"
               target="_blank"
-              className="footer__button-tripleten"
-              rel="connect"
+              rel="noopener noreferrer"
+              className="footer__button footer__button--tripleten"
             >
               TripleTen
             </a>
           </li>
         </ul>
-        <ul className="footer__links_icons">
+        <ul className="footer__icon-list">
           <li className="footer__icon">
             <a
               href="https://github.com/Natalia2311"
               target="_blank"
-              className="footer__button-github"
-              rel="connect"
+              rel="noopener noreferrer"
+              className="footer__icon-link"
             >
-              <img src={GitHubIcon} alt="GitHub" />
+              <img src={GitHubIcon} alt="GitHub" className="footer__icon-image" />
             </a>
           </li>
           <li className="footer__icon">
             <a
               href="https://www.facebook.com"
               target="_blank"
-              className="footer__button-facebook"
-              rel="connect"
+              rel="noopener noreferrer"
+              className="footer__icon-link"
             >
-              <img src={FacebookIcon} alt="Facebook" />
+              <img
+                src={FacebookIcon}
+                alt="Facebook"
+                className="footer__icon-image"
+              />
             </a>
           </li>
         </ul>
@@ -57,5 +59,6 @@ const Footer = () => {
     </footer>
   );
 };
+
 
 export default Footer;

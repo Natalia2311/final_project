@@ -15,9 +15,11 @@ const NewsCardList = ({ articles, isLoggedIn, savedArticles, handleSaveArticle, 
       className={`news-card-list ${
       isSavedNewsPage ? "news-card-list--saved" : "news-card-list--main"
     }`}>
-      {!isSavedNewsPage && <h2 className="card-list__title">Search results</h2>}
+      {!isSavedNewsPage && <h2 className="news-card-list__title">Search results</h2>}
       {articles.length === 0 ? null : (
-        <ul className="card-list__articles">
+        <ul  className={`news-card-list__articles ${
+          isSavedNewsPage ? "news-card-list__articles--saved" : "news-card-list__articles--main"
+        }`} >
           {articles.slice(0, visible).map((article, index) => (
             <NewsCard
             key={article.id || index} 
@@ -37,7 +39,9 @@ const NewsCardList = ({ articles, isLoggedIn, savedArticles, handleSaveArticle, 
         </ul>
       )}
       {visible < articles.length && (
-        <button className={`show-more-button ${isSavedNewsPage ? "show-more-button--saved" : ""}`} onClick={showMoreItems}>
+        <button className={`news-card-list__show-more-button 
+        ${isSavedNewsPage ? "news-card-list__show-more-button--saved" : ""}`}
+         onClick={showMoreItems}>
           Show more
         </button>
       )}

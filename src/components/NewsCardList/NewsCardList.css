@@ -5,12 +5,12 @@
   flex-direction: column;
 }
 
-.news-card-list--saved {
-  padding-top: 62px;
-  padding-bottom: 62px;
-}
+/* .news-card-list--saved {
+  margin-top: 62px;
+  margin-bottom: 62px;
+} */
 
-.card-list__articles {
+.news-card-list__articles--main {
   display: flex;
   justify-content: center;
   width: 100%;
@@ -23,18 +23,31 @@
   align-items: flex-start;
 }
 
-.card-list__title {
+.news-card-list__articles--saved {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 0;
+  margin: 62px auto 0;
+
+  width: 100%;
+  align-items: flex-start;
+}
+
+.news-card-list__title {
   font-family: "Roboto-slab";
   font-weight: 400;
   font-size: 40px;
   line-height: 46px;
-  padding: 80px 0 64px 0;
+  margin: 80px 0 64px 0;
 
-  margin: 0;
+  padding: 0;
   text-align: left;
 }
 
-.show-more-button {
+.news-card-list__show-more-button {
   position: relative;
   width: 288px;
   height: 64px;
@@ -51,64 +64,55 @@
   cursor: pointer;
 }
 
-.show-more-button--saved {
-  margin-bottom: 0;
+.news-card-list__show-more-button--saved {
+  /* margin-bottom: 0; */
 }
 
-.show-more-button:hover {
+.news-card-list__show-more-button:hover {
   background-color: #e8e8e8;
   cursor: pointer;
 }
 
-@media screen and (min-width: 451px) and (max-width: 768px) {
-  .card-list__title {
+@media screen and (min-width: 571px) and (max-width: 768px)  {
+  .news-card-list__title {
     font-size: 30px;
     line-height: 34px;
     padding: 0;
+    margin: 40px 0 32px 0;
   }
 
-  .news-card-list {
-    max-width: 768px;
-    padding-top: 0;
-    padding-bottom: 40px;
-  }
-
-  .news-card-list--main {
-    padding-top: 40px;
-  }
-
-  .card-list__articles {
+  
+  .news-card-list__articles--saved {
     gap: 8px;
-    padding-top: 32px;
+    margin: 32px auto 0;
   }
 
-  .show-more-button {
-    margin: 0 auto;
-    margin-top: 32px;
+  .news-card-list__show-more-button {
+    margin: 32px auto 40px;
   }
 }
 
-@media screen and (max-width: 450px) {
-  .card-list__title {
+@media screen and (min-width: 320px) and (max-width: 570px) {
+  .news-card-list__title {
     line-height: 34px;
-    padding: 32px 16px 58px 16px;
+    margin: 32px 16px 58px 16px;
   }
 
   .news-card-list--main {
     padding: 0;
   }
 
-  .card-list__articles {
+  .news-card-list__articles {
     gap: 10;
     padding: 0;
   }
 
-  .show-more-button {
+  .news-card-list__show-more-button {
     margin: 16px auto 24px;
   }
 
   .news-card-list--saved {
-    padding-top: 24px;
-    padding-bottom: 0;
+    margin-top: 24px;
+    margin-bottom: 0;
   }
 }

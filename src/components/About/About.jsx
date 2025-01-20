@@ -8,14 +8,14 @@ const About = () => {
         <div className="about__container">
           <img src={AuthorImage} className="about__image" alt="Author" />
           <div className="about__text">
-            <h2 className="about__text-author">About The Author</h2>
-            <p className="about__text-description">
+            <h2 className="about__author">About The Author</h2>
+            <p className="about__description">
             Hello! My name is Natalia Semenova, and welcome to my TripleTen final project.
             I am a full-stack web developer with experience in creating online applications 
             using tools like JavaScript, React, Trello for workflow management,
              and Figma, among others.
             </p>
-            <p className="about__text-description">
+            <p className="about__description">
             In TripleTen, I’ve gained invaluable skills in full-stack web development. 
             This experience not only allowed me to acquire new technical knowledge but
              also showed me exciting ways to enhance and apply my existing skills.

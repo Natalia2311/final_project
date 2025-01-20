@@ -1,4 +1,4 @@
-.card__container {
+.card {
   display: flex;
   flex-direction: column;
   background: white;
@@ -12,6 +12,7 @@
   position: relative;
  
 }
+
 
 .card__image {
   width: 400px;
@@ -60,7 +61,7 @@
  
 }
 
-.card__text {
+.card__description {
   font-family: "Roboto";
   font-weight: 400;
   font-size: 16px;
@@ -82,7 +83,7 @@
   margin: 0 0 24px 24px;
 }
 
-.card__bookmark {
+.card__bookmark-container {
   position: absolute;
   top: 24px;
   right: 24px;
@@ -94,11 +95,11 @@
   height: 40px;
   background-image: url("../../images/bookmark.svg");
 }
-.card__bookmark_active {
+.card__bookmark-container_active {
   background-image: url("../../images/bookmarkmarked.svg");
 }
 
-.bookmark-button {
+.card__bookmark-button {
   width: 24px;
   height: 24px;
   border: none;
@@ -108,7 +109,7 @@
   outline: none;
 }
 
-.news-card__remove-button {
+.card__remove-button {
   display: inline-block;
   background: url("../../images/remove_icon_inactive.svg") no-repeat center;
   border: none;
@@ -117,11 +118,11 @@
   cursor: pointer;
 }
 
-.news-card__remove-button:hover {
+.card__remove-button:hover {
   background: url("../../images/remove_icon_active.svg") no-repeat center;
 }
 
-.news-card__remove-button-container {
+.card__remove-container {
   position: absolute;
   top: 24px;
   right: 24px;
@@ -130,7 +131,7 @@
   align-items: flex-end;
 }
 
-.news-card__keyword {
+.card__keyword {
   display: inline-block;
   margin-left: 24px;
   margin-top: 24px;
@@ -147,7 +148,7 @@
   line-height: 24px;
 }
 
-.bookmark-tip {
+.card__bookmark-tip {
   position: absolute;
 
   top: 0;
@@ -169,7 +170,7 @@
   align-content: center;
 }
 
-.news-card__remove-button-tip {
+.card__remove-tip {
   position: absolute;
   top: 0;
   right: 45px;
@@ -193,9 +194,9 @@
 }
 
 
-@media screen and (min-width: 451px) and (max-width: 768px) {
+@media screen and (min-width: 571px) and (max-width: 768px)  {
 
-  .card__container {
+  .card {
     height: 420px;
     max-width: 224px;
   }
@@ -224,7 +225,7 @@
     overflow: hidden;
   }
 
-  .card__text {
+  .card__description {
     max-width: 192px;
     
     margin: 0 16px 12px 16px;
@@ -232,27 +233,27 @@
   }
 
   .card__source {
-     padding: 0 16px 16px 16px;
-     margin: 0;
+     margin: 0 16px 16px 16px;
+    
  
   }
 
-  .card__bookmark {
+  .card__bookmark-container {
     top: 8px;
   right: 8px;
   }
 
-  .bookmark-tip {
+  .card__bookmark-tip {
     width: 150px;
     height: 40px;
   }
 
-  .news-card__keyword {
+  .card__keyword {
     margin-top: 8px;
     margin-left: 8px;
   }
 
-  .news-card__remove-button-container {
+  .card__remove-container {
   padding-top: 8px;
   top: 0;
   padding-right: 8px;
@@ -260,9 +261,9 @@
   }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (min-width: 320px) and (max-width: 570px) {
 
-  .card__container {
+  .card {
     height: 440px;
     max-width: 288px;
     
@@ -293,26 +294,26 @@
     overflow: hidden;
   }
 
-  .card__text {
+  .card__description {
     max-width: 256px;
     
     margin: 0 16px 8px 16px;
     padding: 0;
   }
 
-  .card__bookmark {
+  .card__bookmark-container {
    top: 16px;
   right:16px;
   }
 
-  .news-card__keyword {
+  .card__keyword {
     margin-top: 16px;
     margin-left: 16px;
   }
 
-  .news-card__remove-button-container {
-   padding-right: 16px;
-   padding-top: 16px;
+  .card__remove-container {
+    top: 16px;
+    right:16px;
   }
 
   

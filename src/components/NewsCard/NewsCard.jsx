@@ -46,8 +46,8 @@ const NewsCard = ({
   };
 
   return (
-    <li className="card__container">
-      <div className="card__image">
+    <li className="card">
+      <div className="card__image-container">
         <img
           src={article.urlToImage || article.url}
           alt={article.title}
@@ -56,36 +56,36 @@ const NewsCard = ({
 
         {!isSavedNewsPage && (
           <div
-            className={`card__bookmark ${
-              isSaved ? "card__bookmark_active" : ""
+            className={`card__bookmark-container ${
+              isSaved ? "card__bookmark-container_active" : ""
             }`}
             onMouseEnter={() => !isLoggedIn && setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
             onClick={handleSave}
           >
             <button
-              className="bookmark-button"
+              className="card__bookmark-button"
               aria-label={isSaved ? "Unsave article" : "Save article"}
             />
             {!isLoggedIn && isHovered && (
-              <span className="bookmark-tip">Sign in to save articles</span>
+              <span className="card__bookmark-tip">Sign in to save articles</span>
             )}
           </div>
         )}
 
         {isSavedNewsPage ? (
           <div
-            className="news-card__remove-button-container"
+            className="card__remove-container"
             onMouseEnter={handleMouseEnterRemoveButton}
             onMouseLeave={handleMouseLeaveRemoveButton}
           >
             <button
-              className="news-card__remove-button"
+              className="card__remove-button"
               aria-label="Remove article"
               onClick={handleRemove}
             />
             {isHovered && (
-              <span className="news-card__remove-button-tip">
+              <span className="card__remove-tip">
                 Remove from saved
               </span>
             )}
@@ -96,13 +96,13 @@ const NewsCard = ({
       </div>
 
       {isSavedNewsPage && (
-        <span className="news-card__keyword">{article.keyword}</span>
+        <span className="card__keyword">{article.keyword}</span>
       )}
 
       <div className="card__text-container">
         <p className="card__date">{formattedDate}</p>
         <h3 className="card__title">{article.title}</h3>
-        <p className="card__text">{article.description}</p>
+        <p className="card__description">{article.description}</p>
         <p className="card__source">
           {article.source?.name || "Unknown Source"}
         </p>
