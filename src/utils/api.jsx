@@ -1,5 +1,3 @@
-import { savedArticles } from "./constants";
-import { handleResponse } from "../utils/auth";
 
 export const APIKey = "bbf9b310100f45e1aa928a364cf42779";
 

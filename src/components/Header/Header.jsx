@@ -22,7 +22,6 @@ const Header = ({
 
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
- 
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
@@ -33,9 +32,8 @@ const Header = ({
     setIsHidden(true);
   };
 
-  
   return (
-    <nav
+    <header
       className={`header ${
         isSavedNewsPage ? "header--saved-news" : "header--main"
       }`}
@@ -50,57 +48,69 @@ const Header = ({
             NewsExplorer
           </h1>
         </div>
-        <div className="header__bar-buttons">
-          <Link
-            to="/"
-            className={`header__bar-button-home ${
-              location.pathname === "/" ? "header__bar-button-home--main" : ""
-            }`}
-          >
-            Home
-          </Link>
-          {isLoggedIn ? (
-            <>
+        <nav className="header__navigation">
+          <ul className="header__link-list">
+            <li>
               <Link
-                to="/saved-news"
-                className={`header__bar-button-saved ${
-                  isSavedNewsPage
-                    ? "header__bar-button-saved--black"
-                    : "header__bar-button-saved--white"
+                to="/"
+                className={`header__bar-button-home ${
+                  location.pathname === "/"
+                    ? "header__bar-button-home--main"
+                    : ""
                 }`}
               >
-                Saved Articles
+                Home
               </Link>
+            </li>
 
-              <div className="username">
+            {isLoggedIn ? (
+              <>
+                <li>
+                  <Link
+                    to="/saved-news"
+                    className={`header__bar-button-saved ${
+                      isSavedNewsPage
+                        ? "header__bar-button-saved--black"
+                        : "header__bar-button-saved--white"
+                    }`}
+                  >
+                    Saved Articles
+                  </Link>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    className={`button-logout ${
+                      isSavedNewsPage
+                        ? "button-logout--black"
+                        : "button-logout--white"
+                    }`}
+                    onClick={handleLogout}
+                  >
+                    {currentUser?.name || "Natalia"}
+                    <img
+                      src={isSavedNewsPage ? logoutblack : logoutwhite}
+                      className="button-logout-icon"
+                      alt="Logout Icon"
+                    />
+                  </button>
+                </li>
+              </>
+            ) : (
+              <li>
                 <button
-                  type="button"
-                  className={`button-logout ${
-                    isSavedNewsPage
-                      ? "button-logout--black"
-                      : "button-logout--white"
-                  }`}
-                  onClick={handleLogout}
+                  onClick={handleSignInClick}
+                  className="header__bar-button-signin"
                 >
-                  {currentUser?.name || "Natalia"}
-                  <img
-                    src={isSavedNewsPage ? logoutblack : logoutwhite}
-                    className="button-logout-icon"
-                    alt="Logout Icon"
-                  />
+                  Sign in
                 </button>
-              </div>
-            </>
-          ) : (
-            <button
-              onClick={handleSignInClick}
-              className="header__bar-button-signin"
-            >
-              Sign in
-            </button>
-          )}
-        </div>
+              </li>
+            )}
+          </ul>
+        </nav>
       </div>
+
+      
       {!isSavedNewsPage && <SearchForm handleSearch={handleSearch} />}
 
       {!isMobileMenuOpen && (
@@ -119,7 +129,7 @@ const Header = ({
           onSignInClick={handleSignInClick}
         />
       )}
-    </nav>
+    </header>
   );
 };
 

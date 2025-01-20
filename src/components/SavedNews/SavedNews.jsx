@@ -26,7 +26,7 @@ const SavedNews = ({ isLoggedIn, handleSaveArticle }) => {
   return (
     <div className="saved-news">
       <div className="saved-news__header">
-        <h2 className="saved-news__title">Saved articles</h2>
+        <h1 className="saved-news__title">Saved articles</h1>
         <p className="saved-news__summary">
           {name}, you have {savedArticles?.length || 0} saved articles
         </p>

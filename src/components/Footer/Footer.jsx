@@ -11,7 +11,7 @@ const Footer = () => {
       <p className="footer__text">
         &copy; {currentYear} Supersite, Powered by News Api
       </p>
-       <nav className="footer__nav">
+      <nav className="footer__nav">
         <ul className="footer__link-list">
           <li className="footer__link">
             <Link to="/" className="footer__button footer__button--home">
@@ -22,7 +22,6 @@ const Footer = () => {
             <a
               href="https://tripleten.com/"
               target="_blank"
-              rel="noopener noreferrer"
               className="footer__button footer__button--tripleten"
             >
               TripleTen
@@ -34,17 +33,19 @@ const Footer = () => {
             <a
               href="https://github.com/Natalia2311"
               target="_blank"
-              rel="noopener noreferrer"
               className="footer__icon-link"
             >
-              <img src={GitHubIcon} alt="GitHub" className="footer__icon-image" />
+              <img
+                src={GitHubIcon}
+                alt="GitHub"
+                className="footer__icon-image"
+              />
             </a>
           </li>
           <li className="footer__icon">
             <a
               href="https://www.facebook.com"
               target="_blank"
-              rel="noopener noreferrer"
               className="footer__icon-link"
             >
               <img
@@ -59,6 +60,5 @@ const Footer = () => {
     </footer>
   );
 };
-
 
 export default Footer;

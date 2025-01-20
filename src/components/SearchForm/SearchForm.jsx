@@ -32,7 +32,8 @@ const SearchForm = ({ handleSearch }) => {
           Find the latest news on any topic and save them in your personal
           account.
         </p>
-        <div className="searchForm__searchbar">
+        <form className="searchForm__searchbar"
+        onSubmit={handleSubmit(handleSearchSubmit)}>
           <input
             className="searchForm__searchbar-input"
             id="searchForm-search"
@@ -52,11 +53,11 @@ const SearchForm = ({ handleSearch }) => {
           <button
             type="submit"
             className="searchForm__submit"
-            onClick={handleSubmit(handleSearchSubmit)}
+            
           >
             Search
           </button>
-        </div>
+        </form>
       </section>
     </div>
   );

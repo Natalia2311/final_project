@@ -1,74 +1,66 @@
- .saved-news__title {
-  font-family: "Roboto";
+.saved-news__title {
+  font-family: "Roboto", Arial, sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
-  color:#1A1B2280;
+  color: #1a1b2280;
   margin: 40px 0 28px 104px;
+}
+
+.saved-news__summary {
+  font-family: "Roboto-Slab", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 46px;
+  max-width: 530px;
+  margin: 0 0 30px 104px;
+}
+
+.saved-news__keywords {
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  margin: 0 0 56px 104px;
+}
+
+.saved-news__keywords strong {
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@media screen and (min-width: 571px) and (max-width: 768px) {
+  .saved-news__title {
+    margin: 24px 0 16px 40px;
+    padding: 0;
+    font-size: 14px;
   }
 
   .saved-news__summary {
-    font-family: "Roboto-slab";
-    font-weight: 400;
-    font-size: 40px;
-    line-height: 46px;
-    max-width: 530px;
-    margin: 0 0 30px 104px;
+    margin: 0 0 16px 40px;
+    font-size: 30px;
+    line-height: 34px;
+    max-width: 336px;
+    padding: 0;
   }
 
   .saved-news__keywords {
-    font-family: "Roboto";
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 24px;
-    margin: 0 0 56px 104px;
+    margin: 0 0 32px 40px;
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 570px) {
+  .saved-news__title {
+    margin: 8px 16px 16px 16px;
+  }
+  .saved-news__summary {
+    margin: 0 16px 50px 16px;
   }
 
-  .saved-news__keywords strong {
-    font-family: "Roboto";
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 24px;
+  .saved-news__keywords {
+    margin: 0 17px 32px 15px;
   }
-
-  @media screen and (min-width: 571px) and (max-width: 768px) {
-
-    .saved-news__title {
-      margin: 24px 0 16px 40px;
-      padding: 0;
-      font-size: 14px;
-    }
-
-    .saved-news__summary {
-      margin: 0 0 16px 40px;
-      font-size: 30px;
-      line-height: 34px;
-      max-width: 336px;
-      padding: 0;
-    }
-
-
-    .saved-news__keywords {
-      margin: 0 0 32px 40px;
-      padding: 0;
-    }
-
-
-  }
-
-  @media screen and (min-width: 320px) and (max-width: 570px)  {
-
-    .saved-news__title {
-      margin: 8px 16px 16px 16px;
-    }
-    .saved-news__summary {
-
-      margin: 0 16px 50px 16px;
-    }
-
-    .saved-news__keywords {
-      margin: 0 17px 32px 15px;
-     
-    }
-
-  }
+}

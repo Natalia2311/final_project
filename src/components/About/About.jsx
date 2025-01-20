@@ -8,7 +8,7 @@ const About = () => {
         <div className="about__container">
           <img src={AuthorImage} className="about__image" alt="Author" />
           <div className="about__text">
-            <h2 className="about__author">About The Author</h2>
+            <h1 className="about__author">About The Author</h1>
             <p className="about__description">
             Hello! My name is Natalia Semenova, and welcome to my TripleTen final project.
             I am a full-stack web developer with experience in creating online applications 

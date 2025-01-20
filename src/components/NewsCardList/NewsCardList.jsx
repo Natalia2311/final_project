@@ -15,7 +15,7 @@ const NewsCardList = ({ articles, isLoggedIn, savedArticles, handleSaveArticle, 
       className={`news-card-list ${
       isSavedNewsPage ? "news-card-list--saved" : "news-card-list--main"
     }`}>
-      {!isSavedNewsPage && <h2 className="news-card-list__title">Search results</h2>}
+      {!isSavedNewsPage && <h1 className="news-card-list__title">Search results</h1>}
       {articles.length === 0 ? null : (
         <ul  className={`news-card-list__articles ${
           isSavedNewsPage ? "news-card-list__articles--saved" : "news-card-list__articles--main"

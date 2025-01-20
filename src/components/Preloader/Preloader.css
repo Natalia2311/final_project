@@ -9,7 +9,7 @@
     
 }
 .preloader__text {
-    font-family: "Roboto";
+    font-family: "Roboto", Arial, sans-serif;
     font-weight: 400;
     font-size: 18px;
     line-height: 24px;
@@ -28,7 +28,7 @@
     border-bottom-color: #888;
     border-radius: 50%;
     animation: spin .75s infinite linear;
-    font-family: "Roboto";
+    font-family: "Roboto", Arial, sans-serif;
     font-weight: 400;
     font-size: 18px;
     line-height: 24px;

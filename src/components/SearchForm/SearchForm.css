@@ -1,5 +1,4 @@
 .searchForm {
-
   position: relative;
 }
 
@@ -8,12 +7,12 @@
   flex-direction: column;
   align-items: center;
   position: relative;
- 
 }
 
 .searchForm__title {
   color: white;
-  font-family: "Roboto-slab";
+  font-family: "Roboto-Slab", Arial, sans-serif;
+
   font-weight: 400;
   font-size: 60px;
   line-height: 64px;
@@ -25,7 +24,7 @@
 }
 
 .searchForm__description {
-  font-family: "Roboto";
+  font-family: "Roboto", Arial, sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
@@ -48,7 +47,7 @@
   border-radius: 100px;
   border: 1px;
   border-color: #d1d2d6;
-  font-family: "Roboto";
+  font-family: "Roboto", Arial, sans-serif;
   font-size: 16px;
   line-height: 22px;
   font-weight: 400;
@@ -67,7 +66,7 @@
   position: absolute;
   padding: 0;
   font-size: 18px;
-  font-family: "Roboto";
+  font-family: "Roboto", Arial, sans-serif;
   font-weight: 500;
   line-height: 24px;
 }
@@ -83,28 +82,24 @@
 
 .searchForm__invalid {
   position: absolute;
-  bottom: -28px; 
+  bottom: -28px;
   left: 5px;
   color: #ff0000;
-  font-family: "Inter";
+  font-family: "Inter", Arial, sans-serif;
   font-weight: 400;
   font-size: 12px;
   line-height: 14.52px;
 }
 
-@media screen and (min-width: 571px) and (max-width: 768px)  {
-  .searchForm {
-    /* height: 400px; */
-  }
-
+@media screen and (min-width: 571px) and (max-width: 768px) {
   .searchForm__description {
-   
+    max-width: 482px;
     margin: 0 auto 48px;
     width: 100%;
   }
 
   .searchForm__title {
-    /* max-width: 385px; */
+    max-width: 385px;
     font-size: 36px;
     line-height: 40px;
     margin: 38px auto 16px;
@@ -113,7 +108,6 @@
   .searchForm__searchbar-input {
     width: 448px;
     height: 56px;
-    
   }
 
   .searchForm__submit {
@@ -128,26 +122,17 @@
 }
 
 @media screen and (min-width: 320px) and (max-width: 570px) {
-  .searchForm {
-    /* height: 536px; */
-  }
-
-  
   .searchForm__title {
-    /* max-width: 285px; */
     margin: 30px 16px 16px 19px;
   }
 
   .searchForm__description {
-  
     margin: 0 16px 122px 16px;
   }
 
   .searchForm__searchbar-input {
     width: 272px;
     padding: 17px 0 17px 16px;
-   
-    
   }
 
   .searchForm__submit {
@@ -156,13 +141,8 @@
     padding: 16px 16px 32px 16px;
     height: 56px;
     margin: auto;
-
   }
   .searchForm__searchbar {
     gap: 16px;
-    
   }
-  
-  }
-
-
+}

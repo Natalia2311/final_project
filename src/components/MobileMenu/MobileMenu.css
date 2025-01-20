@@ -10,7 +10,6 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
-  
     z-index: 1;
   }
     .mobile-menu {
@@ -23,7 +22,7 @@
     .mobile-menu__logo {
       text-decoration: none;
       display: block;
-      font-family: "Roboto-slab";
+      font-family: "Roboto-Slab", Arial, sans-serif;
       font-weight: 700;
       font-size: 16px;
       line-height: 24px;
@@ -82,7 +81,7 @@
     }
 
    .mobile-menu__home {
-  font-family: "Roboto";
+  font-family: "Roboto", Arial, sans-serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 56px;
@@ -94,7 +93,7 @@
    }
 
    .mobile-menu__signin {
-    font-family: "Roboto";
+    font-family: "Roboto", Arial, sans-serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
@@ -109,7 +108,7 @@
    }
 
    .mobile-menu__saved {
-   font-family: "Roboto";
+   font-family: "Roboto", Arial, sans-serif;
    font-weight: 500;
    line-height: 24px;
    font-size: 18px;
@@ -119,7 +118,7 @@
    }
 
    .mobile__username {
-    font-family: "Roboto";
+    font-family: "Roboto", Arial, sans-serif;
     font-weight: 500;
     line-height: 24px;
     font-size: 18px;
