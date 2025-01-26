@@ -1,0 +1,146 @@
+@media screen and (min-width: 320px) and (max-width: 570px) {
+
+  .mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 1;
+  }
+    .mobile-menu {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    .mobile-menu__logo {
+      text-decoration: none;
+      display: block;
+      font-family: "Roboto-Slab", Arial, sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 24px;
+      color: white; 
+      margin: 16px 0 16px 16px;
+     
+    }
+  
+    .mobile-menu__container {
+   
+      width: 100%;
+      background-color: #1A1B22;
+      position: fixed;
+      top: 0;
+      display: flex;
+      flex-direction: column;  
+    }
+  
+    .mobile-menu__container::before {
+      content: "";
+      position: absolute;
+      top: 56px;
+      right: 0;
+      height: 1px;
+      width: 100%;
+      background-color: #C4C4C4;
+    }
+
+    .mobile-menu__container-content {
+      display: flex;
+      flex-direction: column;
+      margin-left: 16px;
+    }
+
+    .mobile-menu__close-button {
+      border: none;
+      background-repeat: no-repeat;
+      background-size: contain;
+      
+      background: transparent;
+    }
+
+    .header__menu-close {
+      margin: 16px 16px 16px 0;
+      position: relative;
+      right: -6px;
+    }
+  
+    .mobile-menu__nav-list {
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      
+    }
+
+   .mobile-menu__home {
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 56px;
+  background: none;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 22px;
+  
+   }
+
+   .mobile-menu__signin {
+    font-family: "Roboto", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  border-width: 1px;
+  border-color: white;
+  border-radius: 100px;
+  width: 288px;
+  height: 56px;
+  background: none;
+  color: white;
+  margin-bottom: 24px;
+   }
+
+   .mobile-menu__saved {
+   font-family: "Roboto", Arial, sans-serif;
+   font-weight: 500;
+   line-height: 24px;
+   font-size: 18px;
+   text-decoration: none;
+   color: white;
+   margin-bottom: 42px;
+   }
+
+   .mobile__username {
+    font-family: "Roboto", Arial, sans-serif;
+    font-weight: 500;
+    line-height: 24px;
+    font-size: 18px;
+    text-align: center;
+    color: white;
+    margin-bottom: 22px;
+
+  }
+  .mobile-button__logout {
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    border-radius: 100px;
+    background: none;
+    text-align: center;
+    border-width: 1px;
+    border-color: white;
+    color: white;
+    width: 112px;
+    height: 48px;
+    text-align: center;
+    color: white;
+    
+  }
+}

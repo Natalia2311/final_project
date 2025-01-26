@@ -1,0 +1,56 @@
+@font-face {
+    src: url("../fonts/roboto-slab-700.woff") format("woff");
+    font-family: "Roboto-slab";
+    font-weight: 700;
+}
+
+@font-face {
+  src: url("../fonts/roboto-500.woff") format("woff");
+  font-family: "Roboto";
+  font-weight: 500;
+}   
+
+@font-face {
+  src: url("../fonts/roboto-slab-400-regular.woff") format("woff");
+  font-family: "Roboto-slab";
+  font-weight: 400;
+}
+
+@font-face {
+  src: url("../fonts/roboto-400-regular.woff") format("woff");
+  font-family: "Roboto";
+  font-weight: 400;
+}   
+
+@font-face {
+  src: url("../fonts/roboto-900.woff") format("woff");
+  font-family: "Roboto";
+  font-weight: 900;
+}  
+
+@font-face {
+  src: url("../fonts/inter-400-regular.woff") format("woff");
+  font-family: "Inter";
+  font-weight: 400;
+}  
+
+@font-face {
+  src: url("../fonts/../fonts/roboto-700.woff") format("woff");
+  font-family: "Roboto";
+  font-weight: 700;
+}  
+
+
+/* .news__cards-header {
+  margin: 60px;
+  font-size: 40px;
+  line-height: 46px;
+  font-family: Roboto-Slab, Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: black;
+  padding-top: 30px;
+} */
+/* font-family: "Roboto", Arial, sans-serif;
+
+Roboto-Slab, Arial, sans-serif; */

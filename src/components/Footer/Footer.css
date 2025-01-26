@@ -1,0 +1,152 @@
+.footer {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.footer__text {
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  margin: 32px 0 26px 104px;
+  color: #b6bcbf;
+}
+
+.footer__links {
+  display: flex;
+}
+
+.footer__nav {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 30px 40px 26px 0;
+  justify-content: space-between;
+}
+
+.footer__link-list {
+  list-style: none;
+  display: flex;
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  margin: 30px 40px 26px 0;
+}
+
+.footer__button--tripleten {
+  margin-left: 40px;
+  text-decoration: none;
+  color: black;
+}
+
+.footer__icon-list {
+  display: flex;
+  list-style: none;
+  margin: 28px 104px 28px 0;
+  padding: 0;
+  gap: 24px;
+}
+
+.footer__button--home {
+  padding: 0;
+  border-width: 0cap;
+  background: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+}
+
+.footer__icon-image {
+  width: 24px;
+  height: 24px;
+}
+
+@media screen and (min-width: 571px) and (max-width: 768px) {
+  .footer__nav {
+    margin: 0;
+  }
+
+  .footer {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .footer__text {
+    margin: 24px 0 18px 40px;
+  }
+
+  .footer__link-list {
+    margin: 21px 0 19px 0;
+  }
+
+  .footer__icon-list {
+    margin: 20px 40px 20px 40px;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 570px) {
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .footer__nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    margin: 0 16px;
+  }
+
+  .footer__text {
+    font-size: 16px;
+    line-height: 22px;
+    width: 288px;
+    color: #b6bcbf;
+    order: 1;
+    text-align: center;
+    margin: 38px 16px 0 16px;
+    padding-bottom: 22px;
+  }
+
+  .footer__link-list {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0 16px;
+    font-size: 18px;
+    line-height: 48px;
+  }
+
+  .footer__link {
+    margin: 0;
+  }
+
+  .footer__icon-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0 16px 50px 0;
+  }
+
+  .footer__button--home,
+  .footer__button--tripleten {
+    text-decoration: none;
+    color: black;
+    margin: 0;
+  }
+}

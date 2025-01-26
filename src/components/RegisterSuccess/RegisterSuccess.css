@@ -1,0 +1,29 @@
+.registeration {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.registeration__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__switch-signin {
+  display: block;
+  margin-bottom: 23px;
+  text-align: left;
+  padding: 0;
+  border: none;
+  color: #2f71e5;
+  background-color: white;
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 400;
+  line-height: 16.94px;
+  font-size: 14px;
+  margin-top: -8px;
+}
+
+.modal__signin {
+  display: inline-block;
+  text-align: left;
+}

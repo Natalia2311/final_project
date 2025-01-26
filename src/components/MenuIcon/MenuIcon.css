@@ -1,0 +1,16 @@
+@media screen and (min-width: 320px) and (max-width: 570px) {
+
+  .menu-icon {
+    display: block; 
+    position: absolute; 
+    top: 9px;
+    right: 10px;
+  }
+
+  .header__menu-icon {
+    width: 24px; 
+    height: auto;
+    display: inline-block;
+  }
+  
+} 
