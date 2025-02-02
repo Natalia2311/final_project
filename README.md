@@ -1,5 +1,6 @@
 
 News Explorer App
+
 Link to GitHub pages.
 
 App Overview
