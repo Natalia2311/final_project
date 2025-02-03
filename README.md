@@ -11,7 +11,7 @@ Users can create an account and log in. If a user has previously logged in, the 
 Technologies Used
 
 The front-end interface was created with the help of React.js, CSS. The layout adapts to different screen resolutions using media queries. CSS classes follow BEM methodology. 
-Link to front end repo: https://natalia2311.github.io/final_project/
+Link to front end repo: https://github.com/Natalia2311/final_project.git
 Articles search is performed by sending requests to News API: https://newsapi.org
 
 ![image](https://github.com/user-attachments/assets/c058b22f-3c98-4909-9b75-a0652b79d9ac)
